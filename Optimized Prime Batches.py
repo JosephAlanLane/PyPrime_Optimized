@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -17,17 +17,19 @@ def primesfrom2to(n):
     return np.r_[2,3,((3*np.nonzero(sieve)[0][1:]+1)|1)]
 
 
-# In[ ]:
+# In[6]:
 
+
+import time as t
 
 start_time = t.time()
-l = len(primesfrom2to(1449500000)) 
+p = primesfrom2to(1449500000)
 duration = t.time() - start_time
-print('len: {}, Local execution time: {}'.format(l, duration))
-# len: 72333789, Local execution time: 5.7807297706604
+print('len: {}, Local execution time: {}'.format(len(p), duration))
+# len: 72333789, Local execution time: 5.7807297706604, not bad
 
 
-# In[ ]:
+# In[7]:
 
 
 def writing_primes():
